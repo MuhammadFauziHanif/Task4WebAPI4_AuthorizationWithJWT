@@ -31,7 +31,10 @@ namespace MyRESTServices.Data
             }
         }
 
-
+        public Task<bool> Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task<IEnumerable<User>> GetAll()
         {
@@ -45,6 +48,10 @@ namespace MyRESTServices.Data
             return users;
         }
 
+        public Task<User> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task<User> GetByUsername(string username)
         {
@@ -114,6 +121,11 @@ namespace MyRESTServices.Data
             {
                 throw new ArgumentException(ex.Message);
             }
+        }
+
+        public Task<User> Update(int id, User entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

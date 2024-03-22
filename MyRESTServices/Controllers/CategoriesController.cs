@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyRESTServices.BLL.DTOs;
 using MyRESTServices.BLL.Interfaces;
@@ -22,6 +23,7 @@ namespace MyRESTServices.Controllers
             _validatorCategoryUpdateDto = validatorCategoryUpdateDto;
         }
 
+        [Authorize(Roles = "admin")]
         [HttpGet]
         public async Task<IEnumerable<CategoryDTO>> Get()
         {
